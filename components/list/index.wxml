@@ -1,0 +1,11 @@
+<!--components/list/index.wxml-->
+<view class="list-container">
+    <view class="item" wx:for="{{processUserList}}" wx:key="index">
+        <text class="name">
+            {{item.name}}{{item.id}}
+        </text>
+        <text class="del" data-user="{{item.name}}" bind:tap="delUser">
+            删除
+        </text>
+    </view>
+</view>
