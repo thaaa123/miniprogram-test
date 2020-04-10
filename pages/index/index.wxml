@@ -1,9 +1,9 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- wxs的引用 -->
-  <wxs src="../../wxs/comm.wxs" module="comm" />
+<!-- wxs的引用 -->
+<wxs src="../../wxs/comm.wxs" module="comm" />
+<view class="container {{comm.getSafeAreaStyle(isSafeArea)}}">
   <!-- wsx的使用 -->
-  <view> {{comm.foo}} </view>
+  <view> {{comm.foo}}</view>
   <!-- 自定义组件 （传参以及绑定自定义事件） -->
   <list userList="{{userList}}" bind:delUser="onDelUser" />
 </view>

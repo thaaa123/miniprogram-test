@@ -2,12 +2,12 @@
 //获取应用实例
 const app = getApp()
 // behaviors的引用
-const myBehavior = require('../../behaviors/myBehavior')
+const safeArea = require('../../behaviors/safeArea')
 
 // page使用Component构建函数
 Component({
   // behaviors的使用
-  behaviors:[ myBehavior ],
+  behaviors:[ safeArea ],
   data: {
     motto: 'Hello World',
     userList: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
@@ -17,10 +17,7 @@ Component({
     val: 'a'
   },
   methods: {
-    onLoad: function () {
-      console.log('page load');
-      this.say()
-    },
+    onLoad: function () {},
     tapName: function (e) {
       // 获取元素data-属性数据
       let data = e.currentTarget.dataset

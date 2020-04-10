@@ -14,6 +14,22 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const isSafeArea = () => {
+  return new Promise((resolve, reject) => {
+    wx.getSystemInfo({
+      success: function (res) {
+          if (res.model == 'iPhone X') {
+            resolve(true)
+          } else {
+            resolve(false)
+          }
+        }
+      }
+    )
+  })
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  isSafeArea: isSafeArea
 }

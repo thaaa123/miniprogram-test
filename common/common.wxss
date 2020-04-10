@@ -2,3 +2,7 @@
 .small-p {
   padding:5px;
 }
+
+.fix-safeArea {
+  margin-bottom: 68rpx!important;
+}
