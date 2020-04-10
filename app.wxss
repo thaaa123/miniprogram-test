@@ -1,2 +1,2 @@
-/** app.wxss **/
+/** app.wxss 定义app共同样式 **/
 @import "common/common.wxss";

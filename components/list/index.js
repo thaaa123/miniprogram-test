@@ -15,7 +15,7 @@ Component({
       }
     }
   },
-
+  // 数据监听器的使用
   observers: {
     'userList': function (list) {
       let processUserList = list.reduce((total, el, index) => {
@@ -53,6 +53,7 @@ Component({
     },
     delUser: function (e) {
       let user = e.currentTarget.dataset.user
+      // 触发父组件自定义事件
       this.triggerEvent('delUser', {user: user})
     }
   }

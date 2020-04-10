@@ -1,9 +1,11 @@
 <!--components/list/index.wxml-->
 <view class="list-container">
+    <!-- 数据循环 -->
     <view class="item" wx:for="{{processUserList}}" wx:key="index" wx:if="{{item.id > 2}}">
         <text class="name">
             {{item.name}}
         </text>
+        <!-- 事件绑定 -->
         <text class="del" data-user="{{item.name}}" bind:tap="delUser">
             删除
         </text>
