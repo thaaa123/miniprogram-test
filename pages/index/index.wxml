@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    {{motto}}
+  </view>
+  <view class="userList" wx:for="{{userList}}" wx:key="index" data-item="{{item}}" bindtap="tapName">{{item + index}}</view>
+  <view class="box" hover-class="none" hover-stop-propagation="false">
+    <input model:value="{{val}}" />
+    {{val}}
+  </view>
+</view>
