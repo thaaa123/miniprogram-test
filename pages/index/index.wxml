@@ -1,4 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <list userList="{{userList}}" bind:delUser="onDelUser"></list>
+  <wxs src="../../wxs/comm.wxs" module="comm" />
+  <view> {{comm.foo}} </view>
+  <list userList="{{userList}}" bind:delUser="onDelUser" />
 </view>

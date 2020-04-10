@@ -1,8 +1,8 @@
 <!--components/list/index.wxml-->
 <view class="list-container">
-    <view class="item" wx:for="{{processUserList}}" wx:key="index">
+    <view class="item" wx:for="{{processUserList}}" wx:key="index" wx:if="{{item.id > 2}}">
         <text class="name">
-            {{item.name}}{{item.id}}
+            {{item.name}}
         </text>
         <text class="del" data-user="{{item.name}}" bind:tap="delUser">
             删除
