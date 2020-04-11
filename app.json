@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/weuiExample/index",
     "pages/authorization/authorization",
     "pages/index/index",
     "pages/logs/logs"
@@ -22,8 +23,15 @@
       {
         "pagePath": "pages/authorization/authorization",
         "text": "授权"
+      },
+      {
+        "pagePath": "pages/weuiExample/index",
+        "text": "UI实例"
       }
     ]
+  },
+  "usingComponents": {
+    "mp-dialog": "./weui-miniprogram/dialog/dialog"
   },
   "sitemapLocation": "sitemap.json"
 }
