@@ -37,9 +37,34 @@ Page({
       {name: 'cell standard', value: '0', checked: true},
       {name: 'cell standard', value: '1'}
     ],
-    wait: 60
+    wait: 60,
+    toView: '',
+    scrollTop: 0,
+    formScrollTopList: [
+      {
+        name: 'radio',
+        scrollTop: 0
+      },
+      {
+        name: 'mobile',
+        scrollTop: 0
+      },
+      {
+        name: 'vcode',
+        scrollTop: 0
+      },
+    ]
   },
-  onShow: function () {
+  onReady: function () {
+    let query = wx.createSelectorQuery()
+    // top必须要一开始就拿到
+    this.data.formScrollTopList.forEach((item) => {
+      query.select('#' + item.name).boundingClientRect((rect) => {
+        item.scrollTop = rect.top + -250
+      }).exec()
+    })
+    console.log(this.data.formScrollTopList);
+    
   },
   openConfirm: function () {
     this.setData({
@@ -81,7 +106,10 @@ Page({
     })
     this.selectComponent('#form').validate((valid, errors) => {
       if (!valid) {
-        this._showError(errors)
+        const firstError = Object.keys(errors)
+        if (firstError.length) {
+          this._showError(errors[firstError[0]].message)
+        }
       } else {
         this._countDown()
       }
@@ -94,7 +122,11 @@ Page({
     })
     this.selectComponent('#form').validate((valid, errors) => {
       if (!valid) {
-        this._showError(errors)
+        const firstError = Object.keys(errors)
+        if (firstError.length) {
+          this._showError(errors[firstError[0]].message)
+          this._setScrollTop(errors[firstError[0]].name)
+        }
       } else {
         this.checkVcode(this.data.formData.vcode)
       }
@@ -106,6 +138,7 @@ Page({
       this.setData({
         error: '验证码错误'
       })
+      this._setScrollTop('vcode')
     }
   },
   // 倒计时
@@ -125,12 +158,16 @@ Page({
     }
   },
   // 展示错误信息
-  _showError: function(errors) {
-    const firstError = Object.keys(errors)
-    if (firstError.length) {
-      this.setData({
-        error: errors[firstError[0]].message
-      })
-    }
+  _showError: function(message) {
+    this.setData({
+      error: message
+    })
   },
+  // 校验err区域滚动
+  _setScrollTop(name) {
+    let formScrollTop = this.data.formScrollTopList.find(item => item.name === name)
+    this.setData({
+      scrollTop: formScrollTop.scrollTop
+    })
+  }
 })

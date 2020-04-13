@@ -1,6 +1,19 @@
 /* pages/weui-example/index.wxss */
 
 .example {
+    height: 1500rpx;
+}
+
+.form {
+    height: 1000rpx;
+}
+
+.weui-btn-area {
+    height: 600rpx;
+}
+
+.scroll {
+    height: 100vh;
 }
 
 .vcode {
