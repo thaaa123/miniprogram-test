@@ -1,1 +1,9 @@
 /* pages/weui-example/index.wxss */
+
+.example {
+}
+
+.vcode {
+    min-width: 158rpx;
+    text-align: center;
+}

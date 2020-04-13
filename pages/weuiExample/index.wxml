@@ -8,4 +8,26 @@
             <view>test content</view>
         </mp-dialog>
     </view>
+    <view class="errorMsg">
+        <mp-toptips msg="{{error}}" type="error" show="{{error}}" />
+    </view>
+    <view class="form" hover-class="none" hover-stop-propagation="false">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells title="单选列表项">
+                <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+                    <mp-checkbox wx:for="{{radioItems}}" wx:key="value" label="{{item.name}}" model:value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+                </mp-checkbox-group>
+            </mp-cells>
+            <mp-cell prop="mobile" title="手机号" ext-class=" weui-cell_vcode">
+                <input bindinput="formInputChange" data-field="mobile" class="weui-input" placeholder="请输入手机号"/>
+                <view slot="footer" class="weui-vcode-btn vcode" bindtap="handelsendVcodeTop">{{wait === 60 ?'获取验证码' : wait}}</view>
+            </mp-cell>
+            <mp-cell prop="vcode" title="验证码" ext-class=" weui-cell_vcode">
+                <input bindinput="formInputChange" data-field="vcode" class="weui-input" placeholder="请输入验证码"/>
+            </mp-cell>
+        </mp-form>
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
 </veiw>
