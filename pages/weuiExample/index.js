@@ -10,7 +10,7 @@ Page({
     error: '',
     formData: {
       radio: '0',
-      mobile: '15502193006'
+      mobile: ''
     },
     rules: [],
     formRules: [
