@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/animation/animation",
     "pages/weuiExample/index",
     "pages/authorization/authorization",
     "pages/index/index",
@@ -27,6 +28,10 @@
       {
         "pagePath": "pages/weuiExample/index",
         "text": "UI实例"
+      },
+      {
+        "pagePath": "pages/animation/animation",
+        "text": "动画"
       }
     ]
   },

@@ -1,0 +1,4 @@
+<!--pages/animation/animation.wxml-->
+<view class="container" hover-class="none" hover-stop-propagation="false">
+    <view>11</view>
+</view>
