@@ -8,9 +8,6 @@ App({
     })
   },
   onReady: function () {
-    // wx.switchTab({
-    //   url: '/pages/authorization/authorization'
-    // })
   },
   globalData: {
     userInfo: null,

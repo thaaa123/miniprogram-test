@@ -18,6 +18,7 @@ Component({
   // 数据监听器的使用
   observers: {
     'userList': function (list) {
+      // 增加修改数据
       let processUserList = list.reduce((total, el, index) => {
         let item = {
           name: el,
