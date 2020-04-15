@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/authorization/authorization",
     "pages/animation/animation",
     "pages/weuiExample/index",
-    "pages/authorization/authorization",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -43,6 +43,11 @@
     "mp-checkbox": "./weui-miniprogram/checkbox/checkbox",
     "mp-checkbox-group": "./weui-miniprogram/checkbox-group/checkbox-group",
     "mp-form": "./weui-miniprogram/form/form"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请点击确定"
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

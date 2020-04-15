@@ -1,4 +1,6 @@
 // pages/authorization/authorization.js
+const authorize = require('../../utils/authorize.js')
+
 Page({
 
   /**
@@ -16,16 +18,8 @@ Page({
     this.login()
   },
   initLoad() {
-    wx.getSetting({
-      success (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              console.log('userinfo', res)
-            }
-          })
-        }
-      }
+    authorize.getLocation((res) => {
+      console.log('res', res)
     })
   },
   login() {
