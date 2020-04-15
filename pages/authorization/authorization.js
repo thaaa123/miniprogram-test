@@ -18,6 +18,7 @@ Page({
     this.login()
   },
   initLoad() {
+
     authorize.getLocation((res) => {
       console.log('res', res)
     })
@@ -31,5 +32,6 @@ Page({
   },
   bindgetuserinfo: function (e) {
     console.log(e.detail.userInfo)
+    authorize.authorize('scope.userLocation')
   }
 })

@@ -1,3 +1,4 @@
+// 是否授权
 const getSetting = (scopeName) => {
     return new Promise((resolve, reject) => {
         wx.getSetting({
@@ -8,6 +9,7 @@ const getSetting = (scopeName) => {
     })
 }
 
+// 主动发起授权
 const authorize = (scopeName) => {
     return new Promise((resolve, reject) => {
         wx.authorize({
@@ -22,7 +24,7 @@ const authorize = (scopeName) => {
     })
 }
 
-const _getLocation = () => {
+const getWxLocation = () => {
     return new Promise ((resolve, reject) => {
         wx.getLocation({
             type: 'wgs84',
@@ -41,22 +43,23 @@ const getLocation = (cb) => {
         data: null,
         errMsg: ''
     }
-    getSetting('scope.userLocation').then(res => {
+    getSetting(scopeName).then(res => {
         if (res) {
-            _getLocation().then(res => {
+            getWxLocation().then(res => {
                 result.data = res
                 cb(result)
             })
         } else {
             if (res === undefined) {
                 authorize(scopeName).then(res => {
-                    _getLocation().then(res => {
+                    getWxLocation().then(res => {
                         result.data = res
                         cb(result)
                     })
                 }).catch(errMsg => {
                     result.err = true
                     result.errMsg = errMsg
+                    cb(result)
                 })
             } else {
                 result.err = true
@@ -72,5 +75,6 @@ module.exports = {
     getSetting: getSetting,
     authorize: authorize,
     getLocation: getLocation,
+    authorize: authorize
 }
   
