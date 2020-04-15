@@ -47,6 +47,23 @@ const getWxLocation = () => {
     })
 }
 
+// 微信订阅消息
+const wxRequestSubscribeMessage = (tmplIds) => {
+    return new Promise((resolve, reject) => {
+        wx.requestSubscribeMessage({
+            tmplIds: tmplIds,
+            success (res) {
+                console.log('res');
+                
+                resolve(res)
+            },
+            fail (err) {
+                reject(err)
+            }
+        })
+    })
+}
+
 // 微信登录
 const wxLogin = () => {
     return new Promise((resolve, reject) => {
@@ -133,6 +150,22 @@ const getLocation = (cb) => {
     })
 }
 
+// 订阅消息
+const requestSubscribeMessage = (tmplIds, cb) => {
+    let result = {
+        err: false,
+        data: null,
+        errMsg: ''
+    }
+    wxRequestSubscribeMessage(tmplIds).then(res => {
+        cb(res)
+    }).catch(err => {
+        result.err = false
+        result.errCode = err.errCode
+        result.errMsg = err.errMsg
+        cb(result)
+    })
+}
 
 module.exports = {
     getSetting: getSetting,
@@ -141,6 +174,7 @@ module.exports = {
     authorize: authorize,
     openSetting: openSetting,
     login: login,
-    getPhoneNumber: getPhoneNumber
+    getPhoneNumber: getPhoneNumber,
+    requestSubscribeMessage: requestSubscribeMessage
 }
   

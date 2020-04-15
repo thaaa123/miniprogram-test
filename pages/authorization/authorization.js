@@ -30,6 +30,11 @@ Page({
     authorize.getLocation((res) => {
     })
   },
+  formSubmit: (e) => {
+    authorize.requestSubscribeMessage(['8b72kPUeDoyuVh07HfKOSpInMpdw9v0vntUPzmjoxko'], (res) => {
+      console.log(res)
+    })
+  },
   getPhoneNumber: (res) => {
     console.log(res)
   }
