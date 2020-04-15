@@ -19,9 +19,6 @@ Page({
   },
   initLoad() {
 
-    authorize.getLocation((res) => {
-      console.log('res', res)
-    })
   },
   login() {
     wx.login({
@@ -31,7 +28,12 @@ Page({
     })
   },
   bindgetuserinfo: function (e) {
-    console.log(e.detail.userInfo)
-    authorize.authorize('scope.userLocation')
+    authorize.getLocation((res) => {
+      if (res.err) {
+        authorize.openSetting().then(res => {
+          console.log(res)
+        })
+      }
+    })
   }
 })

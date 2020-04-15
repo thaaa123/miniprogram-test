@@ -24,6 +24,18 @@ const authorize = (scopeName) => {
     })
 }
 
+// 重新授权
+const openSetting = () => {
+    return new Promise ((resolve, reject) => {
+        wx.openSetting({
+            success (res) {
+                resolve(res.authSetting)
+            }
+        })
+    })
+}
+
+
 const getWxLocation = () => {
     return new Promise ((resolve, reject) => {
         wx.getLocation({
@@ -75,6 +87,7 @@ module.exports = {
     getSetting: getSetting,
     authorize: authorize,
     getLocation: getLocation,
-    authorize: authorize
+    authorize: authorize,
+    openSetting: openSetting
 }
   
