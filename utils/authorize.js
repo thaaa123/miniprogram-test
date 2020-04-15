@@ -53,8 +53,6 @@ const wxRequestSubscribeMessage = (tmplIds) => {
         wx.requestSubscribeMessage({
             tmplIds: tmplIds,
             success (res) {
-                console.log('res');
-                
                 resolve(res)
             },
             fail (err) {
@@ -158,7 +156,8 @@ const requestSubscribeMessage = (tmplIds, cb) => {
         errMsg: ''
     }
     wxRequestSubscribeMessage(tmplIds).then(res => {
-        cb(res)
+        result.data = res
+        cb(result)
     }).catch(err => {
         result.err = false
         result.errCode = err.errCode
