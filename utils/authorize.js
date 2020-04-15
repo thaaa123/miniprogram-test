@@ -35,7 +35,7 @@ const openSetting = () => {
     })
 }
 
-
+// 微信获取地理位置
 const getWxLocation = () => {
     return new Promise ((resolve, reject) => {
         wx.getLocation({
@@ -43,6 +43,57 @@ const getWxLocation = () => {
             success (res) {
                 resolve(res)
             }
+        })
+    })
+}
+
+// 微信登录
+const wxLogin = () => {
+    return new Promise((resolve, reject) => {
+        wx.login({
+            success (res) {
+              if (res.code) {
+                resolve(res)
+              } else {
+                reject(res)
+              }
+            }
+        })
+    })
+}
+
+// 检查微信登录态是否过期
+const wxCheckSession = () => {
+    return new Promise((resolve, reject) => {
+        wx.checkSession({
+            success () {
+                resolve()
+            },
+            fail () {
+                reject()
+            }
+        })
+    })
+}
+
+// 登录
+const login = (cb) => {
+    wxLogin().then(res => {
+        if (res.code) {
+            // http requst
+            cb()
+        }
+    })
+}
+
+
+// 获取加密手机号
+const getPhoneNumber = (cb) => {
+    wxCheckSession().then(() => {
+        // http requst
+    }).catch(() => {
+        login(res => {
+            // http requst
         })
     })
 }
@@ -88,6 +139,8 @@ module.exports = {
     authorize: authorize,
     getLocation: getLocation,
     authorize: authorize,
-    openSetting: openSetting
+    openSetting: openSetting,
+    login: login,
+    getPhoneNumber: getPhoneNumber
 }
   

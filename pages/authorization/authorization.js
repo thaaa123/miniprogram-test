@@ -18,7 +18,6 @@ Page({
     this.login()
   },
   initLoad() {
-
   },
   login() {
     wx.login({
@@ -29,11 +28,9 @@ Page({
   },
   bindgetuserinfo: function (e) {
     authorize.getLocation((res) => {
-      if (res.err) {
-        authorize.openSetting().then(res => {
-          console.log(res)
-        })
-      }
     })
+  },
+  getPhoneNumber: (res) => {
+    console.log(res)
   }
 })
