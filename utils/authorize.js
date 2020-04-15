@@ -121,25 +121,33 @@ const getLocation = (cb) => {
         data: null,
         errMsg: ''
     }
+    // 是否已授权
     getSetting(scopeName).then(res => {
+        // 已授权
         if (res) {
+            // 获取地理位置
             getWxLocation().then(res => {
                 result.data = res
                 cb(result)
             })
-        } else {
+        } else {    
+            // 未授权
             if (res === undefined) {
+                // 提前向用户发起授权请求
                 authorize(scopeName).then(res => {
+                    // 获取地理位置
                     getWxLocation().then(res => {
                         result.data = res
                         cb(result)
                     })
                 }).catch(errMsg => {
+                    // 拒绝授权
                     result.err = true
                     result.errMsg = errMsg
                     cb(result)
                 })
             } else {
+                // 拒绝授权
                 result.err = true
                 result.errMsg = '拒绝授权'
                 cb(result)
