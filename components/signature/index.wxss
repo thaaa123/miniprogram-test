@@ -51,7 +51,7 @@
 
 .delBtn {
   position: absolute;
-  top: 250rpx;
+  top: 52rpx;
   left: 0rpx;
   transform: rotate(90deg);
   color: #666;
@@ -61,6 +61,14 @@
   position: absolute;
   top: 13rpx;
   left: 25rpx;
+}
+
+.previewBtn {
+  position: absolute;
+  top: 185rpx;
+  left: 0rpx;
+  transform: rotate(90deg);
+  color: #666;
 }
 
 .subBtn {
@@ -78,37 +86,8 @@
 
 /*Peach - 新增 - 保存*/
 
-.saveBtn {
-  position: absolute;
-  top: 375rpx;
-  left: 0rpx;
-  transform: rotate(90deg);
-  color: #666;
-}
-
-
-.previewBtn {
-  position: absolute;
-  top: 500rpx;
-  left: 0rpx;
-  transform: rotate(90deg);
-  color: #666;
-}
-
-.uploadBtn {
-	position: absolute;
-  top: 625rpx;
-  left: 0rpx;
-  transform: rotate(90deg);
-  color: #666;
-}
-
 
 /*Peach - 新增 - 保存*/
-
-
-
-
 
 .black-select {
   width: 60rpx;
