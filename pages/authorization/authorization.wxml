@@ -1,4 +1,5 @@
 <view class="container">
     <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+    <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">获取用户消息</button>
     <button bind:tap="formSubmit">消息订阅</button>
 </view>

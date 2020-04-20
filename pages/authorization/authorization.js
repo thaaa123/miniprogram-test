@@ -18,6 +18,8 @@ Page({
     this.login()
   },
   initLoad() {
+    authorize.getLocation((res) => {
+    })
   },
   login() {
     wx.login({
@@ -27,8 +29,7 @@ Page({
     })
   },
   bindgetuserinfo: function (e) {
-    authorize.getLocation((res) => {
-    })
+    console.log(e);
   },
   formSubmit: (e) => {
     authorize.requestSubscribeMessage(['8b72kPUeDoyuVh07HfKOSpInMpdw9v0vntUPzmjoxko'], (res) => {
@@ -37,5 +38,8 @@ Page({
   },
   getPhoneNumber: (res) => {
     console.log(res)
+    authorize.getPhoneNumber(res.detail, () => {
+
+    })
   }
 })

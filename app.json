@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/authorization/authorization",
     "pages/animation/animation",
+    "pages/authorization/authorization",
     "pages/weuiExample/index",
     "pages/index/index",
     "pages/logs/logs"
@@ -31,7 +31,7 @@
       },
       {
         "pagePath": "pages/animation/animation",
-        "text": "动画"
+        "text": "签名组件"
       }
     ]
   },

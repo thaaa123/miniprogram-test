@@ -96,18 +96,21 @@ const login = (cb) => {
     wxLogin().then(res => {
         if (res.code) {
             // http requst
-            cb()
+            cb(res)
         }
     })
 }
 
 
 // 获取加密手机号
-const getPhoneNumber = (cb) => {
+const getPhoneNumber = (detail, cb) => {
+    // 校验Session
     wxCheckSession().then(() => {
         // http requst
     }).catch(() => {
+        // 过期重新登陆
         login(res => {
+            console.log(res)
             // http requst
         })
     })
@@ -147,7 +150,7 @@ const getLocation = (cb) => {
                     cb(result)
                 })
             } else {
-                // 拒绝授权
+                // 以拒绝授权
                 result.err = true
                 result.errMsg = '拒绝授权'
                 cb(result)

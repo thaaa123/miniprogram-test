@@ -1,1 +1,6 @@
 /* pages/animation/animation.wxss */
+page {
+  background: #fbfbfb;
+  height: auto;
+  overflow: hidden;
+}
