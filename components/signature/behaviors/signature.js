@@ -160,9 +160,6 @@ module.exports = Behavior({
         currentLine: []
       })
     },
-
-
-
     //画两点之间的线条；参数为:line，会绘制最近的开始的两个点；
     pointToLine(line) {
       this.calcBethelLine(line);
@@ -326,7 +323,6 @@ module.exports = Behavior({
         })
       });
     },
-
     //设置canvas背景色  不设置  导出的canvas的背景为透明 
     //@params：字符串  color
     setCanvasBg(color){
