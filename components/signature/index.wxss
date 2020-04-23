@@ -36,9 +36,7 @@
   color: #666;
 }
 
-.handBtn button {
-  font-size: 28rpx;
-}
+
 
 .handBtn {
   height: 95vh;
@@ -55,12 +53,6 @@
   left: 0rpx;
   transform: rotate(90deg);
   color: #666;
-}
-
-.delBtn image {
-  position: absolute;
-  top: 13rpx;
-  left: 25rpx;
 }
 
 .previewBtn {

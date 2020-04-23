@@ -25,7 +25,7 @@
         </view>
     </scroll-view>
     <view class="dialogContainer">
-        <mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <mp-dialog title="test" show="{{dialogShow}}" buttons="{{buttons}}">
             <view>test content</view>
         </mp-dialog>
     </view>

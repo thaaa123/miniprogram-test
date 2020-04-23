@@ -1,0 +1,6 @@
+/* components/map/index.wxss */
+.map {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}

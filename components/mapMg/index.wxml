@@ -1,0 +1,7 @@
+<map id="mapid" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" bindmarkertap="bindmarkertap" class="map" />
+<mp-halfScreenDialog 
+  show="{{show}}"
+  buttons="{{buttons}}"
+>
+  <view>管理员</view>
+</mp-halfScreenDialog>

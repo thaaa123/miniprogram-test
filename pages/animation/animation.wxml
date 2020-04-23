@@ -1,4 +1,5 @@
 <!--pages/animation/animation.wxml-->
 <view class="container" hover-class="none" hover-stop-propagation="false">
-    <signature />
+    <!-- <signature /> -->
+    <map-mg />
 </view>

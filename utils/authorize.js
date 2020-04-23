@@ -39,7 +39,7 @@ const openSetting = () => {
 const getWxLocation = () => {
     return new Promise ((resolve, reject) => {
         wx.getLocation({
-            type: 'wgs84',
+            type: 'gcj02',
             success (res) {
                 resolve(res)
             }

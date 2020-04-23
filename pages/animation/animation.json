@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "signature": "../../components/signature/index"
+    "signature": "../../components/signature/index",
+    "map-mg": "../../components/mapMg/index"
   }
 }
