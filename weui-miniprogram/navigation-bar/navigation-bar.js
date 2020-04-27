@@ -135,6 +135,10 @@ Component({
         delta: {
             type: Number,
             value: 1
+        },
+        fixedBar: {
+            type: Boolean,
+            value: false
         }
     },
     data: {
@@ -178,6 +182,12 @@ Component({
                 delta: data.delta
             });
             this.triggerEvent('back', { delta: data.delta }, {});
+        },
+        getNavBarHeight(cb) {
+            let query = wx.createSelectorQuery().in(this)
+            query.select('.weui-navigation-bar').boundingClientRect((rect) => {
+                cb(rect.height)
+            }).exec()
         }
     }
 });

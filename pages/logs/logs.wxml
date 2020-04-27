@@ -1,6 +1,24 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container">
+  <mp-navigation-bar id="navigationBar" fixedBar="{{true}}" color="{{color}}" title="{{title}}" back="{{false}}"></mp-navigation-bar>
+  <view class="box">
+    <view class="home_top" style="padding-top: {{navbarHeight}}">
+      <view class="search"> 搜索</view>
+      <view class="adSwiper">
+        <swiper class="" indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{background}}" wx:key="*this">
+            <swiper-item>
+              <view class="swiper-item {{item}}">
+                <image class="banner-img"  mode="widthFix" src="../../resources/banner.jpg" alt="banner"/>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    功能
+  </view>
 </view>

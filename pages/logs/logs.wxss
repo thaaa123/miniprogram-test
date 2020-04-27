@@ -1,8 +1,42 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.box {
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
 }
-.log-item {
-  margin: 10rpx;
+
+.home_top {
+	width: 100%;
+  /* padding-top: 136rpx; */
+  text-align: center;
+	/* line-height: 50rpx; */
+}
+
+
+.adSwiper {
+  padding: 0 60rpx;
+}
+
+.swiper-item {
+  background: pink;
+}
+
+.banner-img {
+	width: 100%;
+	/* height: auto; */
+}
+
+.adSwiper swiper {
+	height: 300rpx;
+}
+
+.home_top:after {
+	width: 140%;
+	height: 300rpx;
+	position: absolute;
+	left: -20%;
+	top: 0;
+	z-index: -1;
+	content: '';
+	border-radius: 0 0 50% 50%;
+	background: linear-gradient(#2CBAF9, #04A9F4);
 }

@@ -1,16 +1,16 @@
 {
   "pages": [
+    "pages/logs/logs",
     "pages/animation/animation",
     "pages/authorization/authorization",
     "pages/weuiExample/index",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#a9b7b7",
@@ -43,7 +43,8 @@
     "mp-checkbox": "./weui-miniprogram/checkbox/checkbox",
     "mp-checkbox-group": "./weui-miniprogram/checkbox-group/checkbox-group",
     "mp-form": "./weui-miniprogram/form/form",
-    "mp-halfScreenDialog": "./weui-miniprogram/half-screen-dialog/half-screen-dialog"
+    "mp-halfScreenDialog": "./weui-miniprogram/half-screen-dialog/half-screen-dialog",
+    "mp-navigation-bar": "./weui-miniprogram/navigation-bar/navigation-bar"
   },
   "permission": {
     "scope.userLocation": {
